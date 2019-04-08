@@ -30,13 +30,11 @@
 * 注销命令：logoff  
 + ip地址侦测：Nslookup  
 * 系统文件检查器：sfc.exe  
-+ 60秒关机倒计时：shutdown  
++ 重启计算机：shutdown/r/t 00
 * 垃圾整理：cleanmgr  
-+ 十五秒后关机：rononce -p  
-* 木马捆绑工具，系统自带：iexpress  
+- 木马捆绑工具，系统自带：iexpress  
 + 计算机性能监测程序：compmgmt.msc  
-* 重启计算机：calc
-+ 证书管理实用程序：certmgr.msc  
+- 证书管理实用程序：certmgr.msc  
 * 查看目录文件：dir
 + 查看本机ip：ipconfig 
 * 复制文件：copy 路径\文件名 路径\文件名 ：把一个文件拷贝到另一个地方。
