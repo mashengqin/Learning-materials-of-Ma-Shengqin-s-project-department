@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //去掉数组中的重复元素[5,10,6,11,18,22,11,31,6,52,19]
+        var arr = [5,10,6,11,18,22,11,31,6,52,19];
+        //新建一个对象
+        var str = {};
+        //新建一个数组
+        var arr1 = [];
+        //新建一个for循环,添加变量i，i小于arr的长度所以判定为真执行if语句
+        for(var i=0;i<arr.length;i++){
+            //如果不是str[arr[i]]
+            if(!str[arr[i]]){
+            //就将str[arr[i]]添加到对象中，属性名为" "
+                str[arr[i]]=" ";
+                //在arr1中输出arr[i]
+                arr1.push(arr[i]);
+            }
+        }
+        //输出添加后值的新数组
+        console.log(arr1);
+    </script>
+</body>
+</html>

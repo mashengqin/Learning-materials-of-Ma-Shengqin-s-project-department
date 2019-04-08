@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+            <button @click="w">切换图片1</button>
+            <button @click="e">切换图片2</button>
+            <button @click="r">切换图片3</button>
+        <div>
+        <img v-bind:src="q">
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                q:"img1.jpg"
+            },
+            methods:{
+                w(){
+                    this.q="img1.jpg"
+                },
+                e(){
+                    this.q="img2.jpg"
+                },
+                r(){
+                    this.q="img3.jpg"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

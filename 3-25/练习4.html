@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="a">
+        <h1>{{shijian}}</h1>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#a",
+            data:{
+                shijian: Date(),
+            },
+        mounted() {
+             let a = this; // 声明一个变量指向Vue实例this，保证作用域一致
+             setInterval(() => { //创建箭头函数setInterval
+             a.shijian = Date(); // 修改数据shijiang
+    }, 1000)
+  },
+})
+    </script>
+    </body>
+</html>

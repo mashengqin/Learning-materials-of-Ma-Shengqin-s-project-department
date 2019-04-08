@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="bootstrap.css">
+    <style> </style>
+</head>
+<body>
+    
+        <div id="app">
+            <!-- fieldset将所有表单内容组合起来 -->
+            <fieldset class="text-center"> 
+                        <legend class="text-center">学生列表</legend>
+                            <label for="name">姓名</label>
+                            <input type="text" id="name" placeholder="请输入学生姓名" v-model="newPerson.name">
+                            <label for="age">年龄</label>
+                            <input type="text" id="age" placeholder="请输入学生年龄" v-model="newPerson.age">
+                            <label for="gender">性别</label>
+                            <select name="" id="gender" v-model="newPerson.gender">
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                            </select>
+                            <label type="number">成绩</label>
+                            <input type="text" id="tel" placeholder="请输入学生成绩" v-model="newPerson.achievement">
+                            <button @click="createNewPerson" class="btn btn-primary">创建学生信息</button>
+                        </fieldset>
+
+                <table class="table table-primary">
+                    <thead class="text-center">           
+                    <tr>
+                        <th>姓名</th>
+                        <th>性别</th>
+                        <th>年龄</th>
+                        <th>成绩</th>
+                        <th>删除</th>
+                        <th>修改</th>
+                    </tr>
+                    </thead>
+                    <tbody class="text-center">
+                    <tr v-for="(attribute, index) in persons">
+                        <td>{{attribute .name }}</td>
+                        <td>{{attribute .gender }}</td>
+                        <td>{{ attribute.age }}</td>
+                        <td>{{attribute .achievement }}</td>
+                        <td>
+                            <button @click="delPerson(index)" class="btn btn-primary">删除</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-info" @click="fix(index)">修改</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                
+                </div>
+                <script src="vue.js"></script>
+                <script>
+                    // 创建Vue的实例
+                    let app = new Vue({
+                        el: '#app',
+                        data: {
+                            persons: [
+                            ],
+                            newPerson: {name: '', age: "", gender: '', achievement: ''},
+                        },
+                        methods: {
+                            createNewPerson() {
+                                // 验证
+                                if (this.newPerson.name == '') {
+                                    alert('姓名不能为空');
+                                }else{
+                                this.persons.push(this.newPerson);
+                                this.newPerson = {
+                                name: '',
+                                age: "",
+                                gender: '',
+                                achievement: ''
+                                } 
+                                }
+                            },
+                            
+                            delPerson: function (index) {
+                                this.persons.splice(index, 1)
+                            },
+                            //修改
+                            fix(index){
+                                // let name = prompt("请输入要修改的名字");
+                                // this.persons[index].name = name;
+                                // let age = prompt("请输入要修改的年龄");
+                                // this.persons[index].age = age;
+                                // let gender = prompt("请输入要修改的性别");
+                                // this.persons[index].gender = gender;
+                                let achievement = prompt("请输入要修改的成绩");
+                                this.persons[index].achievement = achievement;
+                            }
+                            }
+                            })
+                </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<div id="app">
+    <button @click="aa(1)">+</button>
+    {{ma}}
+    <button @click="aab(1)">-</button>
+</div>
+<body>
+    <script src="vue.js"></script>
+    <script>
+      new Vue({
+            el:"#app",
+            data:{
+                ma:1
+            },
+            methods:{
+                aa:function(num){
+                    if(num!=""){
+                        this.ma+=num;
+                    }else{
+                        this.ma++;
+                    }
+                },
+            aab:function(num){
+                    if(num!=""){
+                        this.ma-=num;
+                    }else{
+                        this.ma--;
+                    }
+                }
+            }
+        })
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
