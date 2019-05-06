@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //数组[5，10，6，11，18，22，11，31,52，19]，找到里面所有偶数，并将其组成一个新数组
+    var arr=[5,10,6,11,18,22,11,31,52,19];
+    //新建一个空数组，作为输出偶数的新数组
+    var arr1=[];
+    //新建一个变量命名为res值为0
+    var res=0;
+    //创建一个for循环，在for循环括号中创建一个新变量，值为0；判定当i的值小于arr数组的长度
+    //时，执行if判定语句，括号中arr[i]为数组一种索引值所对应的各个数值，然后通过除2余0来判定arr这个数组中的偶数
+    //然后通过res=res+arr[i]来用res储存刚刚所得出的偶数，然后通过：arr1.push（res）在新数组中添加res的值，最后
+    //通过console.log来输出arr1这个新数组，以此类推，一直循环到最后一个数结束，输出完所有偶数后终止程序。
+    for(var i=0;i<arr.length;i++){
+        if(arr[i]%2==0){
+            res=+arr[i];
+            arr1.push(res);
+        }
+    }
+    console.log(arr1);
+    </script>
+</body>
+</html>

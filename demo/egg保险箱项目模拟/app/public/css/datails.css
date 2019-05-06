@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#big_for{
+    width: 100%;
+    height: 13.34rem;
+}
+/* 状态栏样式 */
+.statusbar{
+    width: 100%;
+    position: absolute;
+    margin-top: 0rem;
+}
+/* 盒子样式 */
+#Bodyer_for{
+    width: 100%;
+    height: 1rem;
+    background-color: #17181a;
+    line-height: 0.9rem;
+}
+/* 箭头样式 */
+.Arrow{
+    width: 4%;
+    height: 0.3rem;
+    margin-left: 0.1rem;
+}
+/* 保险箱详情样式 */
+.details{
+    font-size: 0.3rem;
+    color: white;
+    position: absolute;
+    margin-left: 2.11rem;
+    margin-top: 0.2rem;
+}
+/* a标签样式 */
+a{
+    color: black;
+    text-decoration: none;
+}
+/* 大盒子样式 */
+#tree_one_one_one{
+    width: 100%;
+    height: 10.4rem;
+    background-color:#f2f2f2;
+    position: absolute;
+    top: 1rem;
+}
+/* 保险箱详情盒子样式 */
+#fouraa{
+    width: 100%;
+    height: 1.1rem;
+    border-bottom: 1px solid #e6e6e6;
+    background-color:white; 
+    line-height: 0.65rem;
+}
+#fouraa:hover{
+    background-color: #f2f2f2;
+}
+/* 保险箱详情字体样式 */
+.fouraa_span{
+    font-size: 0.28rem;
+    margin-left: 0.3rem;
+}
+/* 牛批保险箱字体样式 */
+.thesafe_style{
+    font-size: 0.28rem;
+    position: absolute;
+    left: 4rem;  
+    top: 1.3rem;
+}
+/* 箭头样式 */
+.arrows{
+    width: 2%;
+    position: absolute;
+    left: 5.9rem;
+    top:1.5rem;    
+}
+/* 品牌信息盒子样式 */
+#five{
+    width: 100%;
+    height: 1.1rem;
+    background-color:white; 
+    line-height: 0.65rem;
+}
+#five:hover{
+    background-color: #f2f2f2;
+}
+/* 品牌样式 */
+.brand{
+    font-size: 0.28rem;
+    margin-left: 0.3rem;
+}
+/* 三星爆炸品牌样式 */
+.samsung{
+    font-size: 0.28rem;
+    margin-left: 4.3rem;
+}
+/* 无名白条样式 */
+#six{
+    width: 100%;
+    height: 0.3rem;
+    border-bottom: 1px solid #e6e6e6;
+    background-color:#f2f2f2; 
+    line-height: 0.65rem;
+}
+/* 序列号盒子样式 */
+#seven{
+    width: 100%;
+    height: 1.1rem;
+    background-color:white; 
+    line-height: 0.65rem;
+}
+#seven:hover{
+    background-color: #f2f2f2;
+}
+/* 序列号样式  */
+.Theserialnumber{
+    font-size: 0.28rem;
+    margin-left: 0.3rem;
+}
+/* 序列号字符样式 */
+.number{
+    font-size: 0.28rem;
+    margin-left:2.1rem;
+    letter-spacing:0.04rem;
+}
+/* 设备IP盒子 */
+#eight{
+     width: 100%;
+    height: 1.1rem;
+    border-bottom: 1px solid #e6e6e6;
+    background-color:white; 
+    line-height: 0.65rem;
+}
+#eight:hover{
+    background-color: #f2f2f2;
+}
+/* 设备IP文字样式 */
+.IP{
+    font-size: 0.28rem;
+    margin-left: 0.3rem;
+}
+/* 设备字符IP样式 */
+.IPnumber{
+    font-size: 0.28rem;
+    margin-left: 3.14rem;
+}
+/* 固态版本盒子 */
+#version{
+    width: 100%;
+    height: 1.1rem;
+    border-bottom: 1px solid #e6e6e6;
+    background-color:white; 
+    line-height: 0.65rem;
+}
+#version:hover{
+    background-color: #f2f2f2;
+}
+/* 固件版本文字样式 */
+.version{
+    font-size: 0.28rem;
+    margin-left: 0.3rem;
+}
+/* 版本号样式 */
+.versionnumber{
+    font-size: 0.28rem;
+    margin-left: 3.1rem;
+}
+/* 链接状态盒子样式 */
+#stateeds{
+    width: 100%;
+    height: 1.1rem;
+    border-bottom: 1px solid #e6e6e6;
+    background-color:white; 
+    line-height: 0.65rem;
+}
+#stateeds:hover{
+    background-color: #f2f2f2;
+}
+/* 连接状态文字样式 */
+.stateabs{
+    font-size: 0.28rem;
+    margin-left: 0.3rem;
+}
+/* 链接状态样式 */
+.connection{
+    font-size: 0.28rem;
+    margin-left: 3.5rem;
+}

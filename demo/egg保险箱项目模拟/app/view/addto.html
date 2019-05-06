@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/css/addto.css">
+    <script src="../public/js/fontsizeset.js"></script>
+    <!-- <script src="../public/js/vue.js"></script> -->
+</head>
+<meta name="viewport" content="width=device-width">
+<body>
+    <!-- 大盒子 -->
+    <div id="big_tree">
+        <div id="Header_tree">
+        <!-- 状态栏的引入 -->
+        <img src="../public/images/状态栏.jpg" alt="" class="Header_tree_img_style">
+    </div>
+    <div id="Bodyer_tree">
+            <!-- 顶部箭头返回键 -->
+            <a href="/"><img src="../public/images/Return@2x.png" alt="" class="Bodyer_tree_img_Two_style"></a> 
+            <!-- 添加保险箱 -->
+            <span class="Add_safe_style">{{Add_safe}}</span>
+    </div>
+    <div id="Footer_tree">
+            <!-- 添加文字保险箱信息 -->
+            <span class="information">保险箱信息</span>
+            <!-- 保险箱品牌 -->
+            <span class="brand">保险箱品牌：三星</span>
+            <!-- 保险箱序列号 -->
+            <span class="serialnumber">保险箱序列号：12335566hdhhjasdj</span>
+            <!-- 保险箱IP -->
+            <span class="IP">保险箱IP：192.168.1.1</span>
+            <form action="">
+            <!-- 输入保险箱名称的文本框 -->
+            <input type="text" placeholder="请输入保险箱名称"  class="textcolor" id="Textname" clientidmode="Static">
+            <!-- 添加保险箱按钮 -->
+            <a href=""> <input type="button" class="btn_style" name="" id="btnname" value="添加保险箱"></a>
+            </form>
+            </div>
+    </div>
+    <script>
+         var input = document.querySelector("#Textname");
+         var but = document.querySelector("#btnname");
+         var reg = /^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1}\.[0-9]{1}$/;
+         but.onclick = function(){
+         if(reg.test(input.value)){
+             alert("验证通过")
+            }else{
+            alert("验证失败");
+            return false;
+            document.getElementById("region").value="";
+         }
+     }
+    </script>
+</body>
+</html>

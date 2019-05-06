@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/css/scanning.css">
+    <script src="../public/js/fontsizeset.js"></script>
+</head>
+<meta name="viewport" content="width=device-width">
+<body>
+    <div id="whole">
+        <div id="HeaDer">
+        <!-- 状态栏 -->
+    <img src="../public/images/状态栏.jpg" alt="" class="status_bar_img">
+        </div>
+        <div id="Boyder">
+             <!-- 添加保险箱 -->
+        <span class="Add_to_style">{{Add_one}}</span>
+        </div>
+        <div id="Footer">
+            <!-- 保险箱logo -->
+            <img src="../public/images/ico@2x.png" alt="" class="logo_img">
+            <!-- 添加保险箱字体 -->
+            <span class="add_style">{{Add_two}}</span>
+            <!-- 扫一扫添加保险箱字体 -->
+            <span class="scan_style">{{scan_Typeface}}</span>
+            <!-- 扫描二维码 -->
+            <div id="big">
+            <a href="/scan" class="scanning_style">{{scanning_Typeface}}</a> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>

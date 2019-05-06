@@ -1,0 +1,39 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <h1>{{neirong}}</h1>
+  <button @click="but">开始</button>
+  <button @click="stop">停止</button>
+</div>
+<script src="vue.js"></script>
+<script>
+    let a = new Vue({
+            el:"#app",
+            data:{
+              neirong:"",
+              qq:null,
+            },
+            methods:{
+              but(){
+                var na = ["王中王","王纯心","火腿肠","老王","老李"];
+                if(this.qq)return;
+                this.qq = setInterval(()=>{
+                var n = Math.floor(Math.random()*na.length);
+                this.neirong = na[n];
+                },10)
+              },
+              stop(){
+               clearInterval(this.qq);
+               this.qq = null;
+              }
+            }
+        })
+</script>
+</body>
+</html>

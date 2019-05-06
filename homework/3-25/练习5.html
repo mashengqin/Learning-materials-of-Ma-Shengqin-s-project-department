@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<div id="app">
+    <h1>{{shijian}}</h1>
+</div>
+<body>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+              shijian:"",  
+            },
+            created(){
+                setInterval(()=>{
+                var a = this ;
+                var dateNow = new Date();
+                var dateNow1 = dateNow.getTime();
+                var dateNow2 = new Date("2019-6-6 0:0:0");
+                var dateNow3 = dateNow2.getTime();
+                var res=dateNow3-dateNow1;
+                var y,w,e,r,t,u;
+                w = Math.floor(res/1000/60/60/24);
+                e = Math.floor(res/1000/60/60%24);
+                r = Math.floor(res/1000/60%60);
+                t = Math.floor(res/1000%60);
+                u = Math.floor(res%1000);
+                var t = +w+"天"+e+"时"+r+"分"+t+"秒"+u+"毫秒";
+                    a.shijian=t;
+                },0.00001 )
+            }
+        })
+    </script>
+</body>
+</html>

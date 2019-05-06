@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .del{
+            color:red;
+        }
+    </style>
+</head>
+<input type="text" placeholder="添加水果">
+<button>按钮</button>
+<ul>
+    <li class="box">苹果 <span class="del">删除</span> </li>
+    <li class="box">香蕉 <span class="del">删除</span> </li>
+    <li class="box">鸭梨 <span class="del">删除</span> </li>
+</ul>
+<body>
+    <script>
+        var input=document.querySelector("input");     /*给input标签添加一个input节点*/
+        var button=document.querySelector("button");    /*给button标签添加一个button节点*/
+        var ul=document.querySelector("ul");    /*给ul标签添加一个ul节点*/
+        var li=document.querySelector("li");    /*给li标签添加一个li节点*/
+        // 当鼠标点击到按钮上时，执行这个函数
+        button.onclick=function(){
+            var li1=document.createElement("li");  /*给li创建一个节点，名字为li1*/
+            li1.innerHTML=input.value;    /*将input标签中的value属性赋值给li1 */
+            ul.appendChild(li1) ;    /*将li1节点添加到ul标签中*/
+            var aDel = document.querySelectorAll(".del");/**/
+        }
+        for(var i = 0;i<aDel.lenght-1;i++){
+            for(var j=0;j<aDel.lenght-1-i;i++){
+                if(aDel[j]<aDel[j-1]){
+                    var parent = this.parentNode;
+                    parent.parentNode.removeChild(parent);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
