@@ -104,3 +104,154 @@
    name varchar(20)
   );
 + alter table sure5 add unique(name);
+- create table sure5(  
+   id  int,  
+   name varchar(20),
+   unique(name,id)
+  );
+  > 如何删除唯一约束
+- alter table sure6 drop index name;
+> modify 添加
+- alter table sure6 modify name varchar(20) unique;
+> 总结：
+1. 建表的时候就添加约束
+2. 可以使用 alter...add...
+4. alter...modif...
+5. 删除 alter...drop...
+> 非空约束：修饰的字段不能为NULL（空）
+- create table user7(  
+  id int,  
+  name varchar(20) not null  
+  );
+> 默认约束:当我们插入字段值的时候，如果没有传值，就会使用默认值
+- create table sure8(  
+  id int,  
+  name varchar(20),  
+  age int default 10  
+);
++ insert into sure8 (id,name) values(1,'zhangsan');
+- 传了值，就不会使用默认值
++ insert into sure8 values(1,'zhangsan',16);
+> 外键约束：涉及到两个表：父表，子表  
+> 主表，副表  
+- 班级
++ create table classes(  
+  id int primary key,  
+  name varchar(20)  
+);
+- 学生表
++  create table students(  
+    -> id int primary key,  
+    -> name varchar(20),  
+    -> class_id int,  
+    -> foreign key(class_id) references classes(id)  
+    -> );
+- insert into classes values(1,'一班')
+- insert into classes values(2,'一班')
+- insert into classes values(3,'一班')
+- insert into classes values(4,'一班')
++ insert into students values(1001,'张三',1);
++ insert into students values(1002,'张三',2);
++ insert into students values(1003,'张三',3);
++ insert into students values(1004,'张三',4);
+- <font color="red">
+错误代码:insert into students values(1005,'李四',5);  
+报错内容: ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`test`.`students`, CONSTRAINT `students_ibfk_1` FOREIGN KEY (`class_id`) REFERENCES `classes` (`id`))
+</font>
+- ### 结论
+<font color="blue"> 1. 主表classes 中没有的数据值，在副表中，是不可以使用的。  
+2. 主表中的记录被附表引用，是不可以被删除的</font>
+> ## 数据库的设计范式
+> 第一范式：1NF
+- 表中的所有的字段都是不可分割的原子值？
++ create table student2(  
+  id int primary key,  
+  name varchar(20),  
+  address varchar(30)  
+);
+<br>
+insert into student2 values(1,'张三','中国四川省成都是武侯区武侯大道100号');  
+insert into student2 values(2,'李四','中国四川省成都市武侯区京城大道200号');  
+insert into student2 values(3,'王五','中国四川成都市高新区天府大道90号');  
+- <font color="blue">字段值还可以继续拆分的，就不满足第一范式</font>
++ create table student3(  
+  id int primary key,  
+  name varchar(20),  
+  cuntry varchar(30),  
+  privence varchar(30),
+  city varchar(30),
+  details varchar(30)
+);  
+insert into student3 values(1,'张三','中国','四川省','成都市','武侯区武侯大道100号');  
+insert into student3 values(2,'李四','中国','四川省','成都市','武侯区京城大道200号');  
+insert into student3 values(3,'王五','中国','四川省','成都市','高新区天府大道90号');
+<font color="blue">
+-  范式，设计的越详细，对于某些实际操作可能更好，但不一定是好处  
+</font>
+> 第二范式：必须是满足第一范式的前提下，第二范式要求，除主键外的每一列都必须完全依赖与主键。如果出现不完全依赖，只可能发生在联合主键的情况下。
+- 订单表
++ create table myorder(  
+  product_id int,  
+  customer_id int,  
+  product_name varchar(20),  
+  customer_name vachar(20),  
+  primary key(product_id,customer_id)  
+);
+<font color="red">
+- 除组件以外的其他列，只依赖与主键的部分字段。
+- 拆表
+</font>
++ create table myorder(  
+  order_id int primary key,  
+  product_id int,  
+  customer_id int  
+);  
+<br>
+create table product(  
+  id int primary key,  
+  name varchar(20)  
+);  <br>
+create table customer(  
+  id int primary key,  
+  name varchar(20)  
+);
+- 分成三个表之后，就满足第二范式的设计
+> 第三范式 （3NF）：必须满足第为范式，除开主键的其他列之间不能有传递依赖关系
+- create table myorder(  
+  order_id int primary key,  
+  product_id int,  
+  customer_id int  
+);
+<br>
+create table customer(  
+  id int primary key,  
+  name varchar(20),  
+  phone varchar(15)  
+);
+- 第三范式不能有传递依赖
+<!-- > 查询练习
+- 学生表  
+student  
+学号  
+姓名  
+性别  
+出生年月日  
+所在班级  
+
++ 课程表  
+Course   
+课程号  
+课程名称  
+教师编号  
+- 成绩表  
+Score  
+学号  
+课程号  
+成绩  
++ 教师表
+Teacher  
+教师编号  
+教师性别  
+出生年月日  
+职称  
+所在部门   -->
